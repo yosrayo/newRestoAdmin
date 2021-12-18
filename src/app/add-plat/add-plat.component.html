@@ -1,0 +1,63 @@
+<form #myform="ngForm" >
+    <fieldset>
+      <legend>Ajout d'un nouveau plat</legend>
+      
+      <div class="form-group">
+        <label >id </label>
+        <input type="text"  [(ngModel)]="plat.Name" name="id" class="form-control" placeholder="">
+      </div>
+      
+      <div class="form-group">
+        <label >code de plat </label>
+        <input type="text"   [(ngModel)]="plat.price" name="code"class="form-control"  placeholder="">
+      </div>
+
+      <div class="form-group">
+        <label >nom de plat </label>
+        <input type="text"  [(ngModel)]="plat.image" name="nom" class="form-control"  placeholder="">
+        
+      </div>
+    
+    <div class="form-group">
+        <label>Description</label>
+        <input type="text" [(ngModel)]="plat.description" name="nom"  class="form-control" required>
+    </div>
+      <div class="form-group">
+        <button type="submit" type="submit"  class="btn btn-lg btn-block btn-info" (click)="onSubmit()">Ajouter</button>
+      </div>
+   
+    </fieldset>
+  </form>
+  <div class="card-header">List PLat</div>    
+                        <div class="card-body position-relative">    
+                            <div class="table-responsive cnstr-record product-tbl">    
+                                <table class="table table-bordered heading-hvr">    
+                                    <thead>    
+                                        <tr>    
+                                            <th class="active">id</th>    
+                                            <th>code</th>    
+                                            <th>nom </th>    
+                                               
+                                            <th width="60"> </th>    
+                                            <th width="60"> </th>    
+                                        </tr>    
+                                    </thead>    
+                                    <tbody>    
+                                        <tr *ngFor="let item of list">    
+                                            <td> {{item.payload.doc.data().name}}</td>    
+                                            <td>{{item.payload.doc.data().image}}</td>    
+                                            <td>{{item.payload.doc.data().price}}</td>    
+                                            <td>{{item.payload.doc.data().id}}</td> 
+                                            <td>{{item.payload.doc.data().description}}</td> 
+                                            <td class="case-record">    </td>
+                                            
+                                        </tr>    
+                                    </tbody>    
+                                </table>    
+                            </div>    
+                        </div>  
+                
+                  
+    
+               
+              
